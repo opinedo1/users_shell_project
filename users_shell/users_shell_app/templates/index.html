@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Users Shell</title>
+    {% comment %}
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    {% endcomment %}
+</head>
+
+    <body>
+        <div class="container-flush m-3">
+
+            <div class="row align-items-center">
+                <h1 class="col text-center text-primary">
+                    Users Shell
+                </h1>
+            </div>
+
+            {% comment %}  {% endcomment %}
+            <div class="row p-2" id="gold">
+                    Placeholder: 
+                    <div class="font-weight-bold border border-dark ml-4 p-1">Test</div>
+
+            </div>
+            <a href="/reset"><button class="btn btn-danger">Reset</button></a>        
+        </div>
+
+        {% comment %} Activity log for our past actions in the game.
+        <div class="container-flush m-3 font-weight-bold">Activities:</div>
+        <div class="container-flush m-3 border border-dark p-2">
+            {% for line in request.session.activities reversed %}
+                <p class="{{line.result}} m-0">{{ line.msg }}</p>
+            {% endfor %}
+        </div>
+        {% endcomment %}
+    </body>
+
+
+</html>
