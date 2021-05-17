@@ -19,14 +19,6 @@
                     All the Users
                 </h1>
             </div>
-
-            {% comment %}  
-            <div class="row p-2" id="gold">
-                    Placeholder: 
-                    <div class="font-weight-bold border border-dark ml-4 p-1">Test</div>
-            </div>
-            {% endcomment %}
-
             {% comment %} All users listed on a table here. {% endcomment %}
             <table class="table">
                 <thead>
@@ -51,32 +43,33 @@
 
         </div>
 
+
         <div class="row align-items-center">
             <h1 class="col text-center text-dark">
                 Add a User
             </h1>
         </div>
-
-
-        <form action="/Add" method="post">
+        {% comment %} Form to create a new entry in our database. {% endcomment %}
+        <form action="add-user" method="POST">
+            {% csrf_token %}
             <div class="form-row m-1">
                 <div class="col-4">
                     <label for="first_name" class="col col-form-label px-1">First Name</label>
-                    <input type="text" class="form-control" placeholder="First Name">
+                    <input type="text" name="first_name" class="form-control" placeholder="First Name" id="first_name">
                 </div>
                 <div class="col-4">
                     <label for="last_name" class="col col-form-label px-1">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name">
+                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" id="last_name">
                 </div>
             </div>
             <div class="form-row m-1">
                 <div class="col-4">
                     <label for="email" class="col col-form-label px-1">Email</label>
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" name="email_address" class="form-control" placeholder="Email" id="email">
                 </div>
                 <div class="col-4">
                     <label for="age" class="col col-form-label px-1">Age</label>
-                    <input type="text" class="form-control" placeholder="Age">
+                    <input type="text" name="age" class="form-control" placeholder="Age" id="age">
                 </div>
             </div>
             <button type="submit" class="btn btn-lg btn-primary px-5 py-1 my-2 ml-2">Add</button>
