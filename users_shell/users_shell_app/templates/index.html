@@ -15,18 +15,33 @@
         <div class="container-flush m-3">
 
             <div class="row align-items-center">
-                <h1 class="col text-center text-primary">
-                    Users Shell
+                <h1 class="col text-center text-dark">
+                    All the Users
                 </h1>
             </div>
 
-            {% comment %}  {% endcomment %}
+            {% comment %}  
             <div class="row p-2" id="gold">
                     Placeholder: 
                     <div class="font-weight-bold border border-dark ml-4 p-1">Test</div>
-
             </div>
-            <a href="/reset"><button class="btn btn-danger">Reset</button></a>        
+            {% endcomment %}
+
+            {% comment %} All users listed on a table here. {% endcomment %}
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
         </div>
 
         {% comment %} Activity log for our past actions in the game.
@@ -37,6 +52,39 @@
             {% endfor %}
         </div>
         {% endcomment %}
+
+
+        <div class="row align-items-center">
+            <h1 class="col text-center text-dark">
+                Add a User
+            </h1>
+        </div>
+
+
+        <form action="/Add" method="post">
+            <div class="form-row m-1">
+                <div class="col-4">
+                    <label for="first_name" class="col col-form-label px-1">First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-4">
+                    <label for="last_name" class="col col-form-label px-1">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="form-row m-1">
+                <div class="col-4">
+                    <label for="email" class="col col-form-label px-1">Email</label>
+                    <input type="text" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-4">
+                    <label for="age" class="col col-form-label px-1">Age</label>
+                    <input type="text" class="form-control" placeholder="Age">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary px-5 py-1 my-2 ml-2">Add</button>
+        </form>
+
     </body>
 
 
