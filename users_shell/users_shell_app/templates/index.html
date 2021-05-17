@@ -31,28 +31,25 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    {% for user in users %}
+                    <tr>
+                        <th>{{ user.first_name }}</th>
+                        <th>{{ user.last_name }}</th>
+                        <th>{{ user.email_address }}</th>
+                        <th>{{ user.age }}</th>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
 
         </div>
-
-        {% comment %} Activity log for our past actions in the game.
-        <div class="container-flush m-3 font-weight-bold">Activities:</div>
-        <div class="container-flush m-3 border border-dark p-2">
-            {% for line in request.session.activities reversed %}
-                <p class="{{line.result}} m-0">{{ line.msg }}</p>
-            {% endfor %}
-        </div>
-        {% endcomment %}
-
 
         <div class="row align-items-center">
             <h1 class="col text-center text-dark">
