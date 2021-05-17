@@ -7,3 +7,7 @@ def index(request):
         'users': User.objects.all()
     }
     return render(request, 'index.html', context)
+
+def add_user(request):
+    print(request.POST)
+    return redirect('/')
